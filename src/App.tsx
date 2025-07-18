@@ -38,23 +38,21 @@ export default function App() {
   };
 
   return (
-    <div class="flex h-screen flex-col justify-between bg-white p-4 dark:bg-gray-800">
-      <div class="text-gray-800 dark:text-gray-100">
-        填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字
-      </div>
-      <div class="text-gray-800 dark:text-gray-100">
-        填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字
-      </div>
-      <div class="text-gray-800 dark:text-gray-100">
-        填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字
-      </div>
-      <div>
+    <div class="flex h-screen flex-col justify-between bg-white dark:bg-gray-800">
+      <div class="text-#333 flex h-16 items-center justify-between border-b border-gray-200 px-4 dark:border-gray-700 dark:text-gray-100">
+        <div class="font-bolder text-lg">Header</div>
         <button
-          class="rounded-md border p-2 outline-none  dark:border-gray-900/50 dark:bg-gray-700 dark:text-gray-100"
+          class="rounded-md border bg-[#2e66c7] px-3 py-1 text-white outline-none dark:border-gray-900/50 dark:bg-gray-700 dark:text-gray-100"
           onClick={toggleTheme}
         >
           切换主题
         </button>
+      </div>
+      <div class="p-4 text-gray-800 dark:text-gray-100">
+        填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字
+      </div>
+      <div class="p-4 text-gray-800 dark:text-gray-100">
+        填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字填充文字
       </div>
     </div>
   );
