@@ -7,34 +7,42 @@ export default function App() {
       Math.max(y, innerHeight - y)
     );
 
-    let isDark: boolean;
+    // 检查浏览器是否支持 View Transitions API
+    if ("startViewTransition" in document) {
+      let isDark: boolean;
+      const transition = (document as Document).startViewTransition(() => {
+        const root = (document as Document).documentElement;
+        isDark = root.classList.contains("dark");
+        root.classList.remove(isDark ? "dark" : "light");
+        root.classList.add(isDark ? "light" : "dark");
+      });
 
-    // @ts-ignore
-    const transition = document.startViewTransition(() => {
-      const root = document.documentElement;
-      isDark = root.classList.contains("dark");
+      transition.ready.then(() => {
+        const clipPath = [
+          `circle(0px at ${x}px ${y}px)`,
+          `circle(${endRadius}px at ${x}px ${y}px)`,
+        ];
+        // @ts-ignore
+        document.documentElement.animate(
+          {
+            clipPath: isDark ? [...clipPath].reverse() : clipPath,
+          },
+          {
+            duration: 500,
+            easing: "ease-in",
+            pseudoElement: isDark
+              ? "::view-transition-old(root)"
+              : "::view-transition-new(root)",
+          }
+        );
+      });
+    } else {
+      // 不支持 View Transitions API，直接切换主题
+      const root = (document as Document).documentElement;
+      const isDark = root.classList.contains("dark");
       root.classList.remove(isDark ? "dark" : "light");
       root.classList.add(isDark ? "light" : "dark");
-    });
-
-    transition.ready.then(() => {
-      const clipPath = [
-        `circle(0px at ${x}px ${y}px)`,
-        `circle(${endRadius}px at ${x}px ${y}px)`,
-      ];
-      document.documentElement.animate(
-        {
-          clipPath: isDark ? [...clipPath].reverse() : clipPath,
-        },
-        {
-          duration: 500,
-          easing: "ease-in",
-          pseudoElement: isDark
-            ? "::view-transition-old(root)"
-            : "::view-transition-new(root)",
-        }
-      );
-    });
+    }
   };
 
   return (
