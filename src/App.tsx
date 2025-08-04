@@ -63,7 +63,7 @@ export default function App() {
           <div class="mx-auto max-w-4xl p-8">
             <div class="demo-card mb-6 rounded-lg bg-white p-6 shadow-[2px_4px_8px_0px_#00000038] dark:bg-gray-800">
               <h2 class="mb-4 text-2xl font-bold dark:text-white">
-                欢迎使用主题动画系统
+                欢迎使用主题动画系统~
               </h2>
               <p class="mb-4 text-gray-600 dark:text-gray-300">
                 这是一个演示项目
